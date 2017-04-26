@@ -22,4 +22,12 @@ public class ExcepcionDiego extends Exception{
         }
     }
     
+    
+    public static void enfermedad_que_impide_tomat_proteinas(String respuesta)throws ExcepcionDiego{
+        if(!(respuesta.equals("DIABETICOS") || respuesta.equals("INTOLERANTES LACTOSA"))){
+             
+            throw new ExcepcionDiego("Recuerde que solo se admiten 'DIABETES' o 'INTOLERANCIA LACTOSA'");
+           
+        }
+    }
 }

@@ -50,8 +50,11 @@ public class TrabajoGrupal {
                     ExcepcionDiego.ValoresSiNo(respuesta);
                     System.out.println("Ingrese el numero de vitaminas que contiene el medicamento: ");
                     int numero= scProteinas.nextInt();
+                    System.out.println("Enfermedades con prohibicion de consumo: ");
+                    String Enfermedad=scProteinas.nextLine();
+                    ExcepcionDiego.enfermedad_que_impide_tomat_proteinas(Enfermedad);
                     JOptionPane.showMessageDialog(null, "Codigo del Medicamento: "+idMedicamento+"\nNombre del Medicamento: "+Nombre+"\nPrecio Unitario: "+valorUnitario+"\nCantidad: "+Cantidad+"\nValor total a pagar: "+(proteina.venderMedicamento(valorUnitario, Cantidad)));
-                    JOptionPane.showMessageDialog(null, "Nota: Este medicamente contiene "+numero+" tipos de vitaminas."+"\nSirve para ganar musculo: "+respuesta);
+                    JOptionPane.showMessageDialog(null, "Nota: Este medicamente contiene "+numero+" tipos de vitaminas."+"\nSirve para ganar musculo: "+respuesta+"Este medicamento no puede ser tomado por:"+Enfermedad);
                     break;
                 } catch (ExcepcionDiego ex) {
                     System.out.println(ex);
@@ -73,25 +76,24 @@ public class TrabajoGrupal {
                     break;
                 }
             case 3:
-                Scanner scantigripal2 = new Scanner(System.in);
-                System.out.println("Ingrese el tipo de antigripal ");
-                String tipo_medicamento= scantigripal2.nextLine();
-                
-                System.out.println("Ingrese el tipo de corticoides que contiene el medicamento");
-                String respuesta_antigripal= scantigripal2.nextLine();
-        {
-            try {
-                Exepcion_grupal.tipo_corticoides(respuesta_antigripal);
-            } catch (Exepcion_grupal ex) {
-                System.out.println(ex);
-                break;
-            }
+             
+                try {
+                    Scanner scantigripal2 = new Scanner(System.in);
+                    System.out.println("Ingrese el tipo de antigripal ");
+                    String tipo_medicamento= scantigripal2.nextLine();
+                    System.out.println("Ingrese el tipo de corticoides que contiene el medicamento");
+                    String respuesta_antigripal= scantigripal2.nextLine();
+                    Exepcion_grupal.tipo_corticoides(respuesta_antigripal);
+                } catch (Exepcion_grupal ex) {
+                    System.out.println(ex);
+                    break;
+                }
         }
 
                 
                 
 
         }
-    }
+    
     
 }
