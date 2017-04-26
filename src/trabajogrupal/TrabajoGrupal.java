@@ -6,6 +6,7 @@
 package trabajogrupal;
 
 import Excepciones.ExcepcionDiego;
+import Excepciones.Exepcion_grupal;
 import Interfaz.Anticonceptivos;
 import Interfaz.Proteinas;
 import java.util.Scanner;
@@ -71,6 +72,21 @@ public class TrabajoGrupal {
                     System.out.println(ex);
                     break;
                 }
+            case 3:
+                Scanner scantigripal2 = new Scanner(System.in);
+                System.out.println("Ingrese el tipo de antigripal ");
+                String tipo_medicamento= scantigripal2.nextLine();
+                
+                System.out.println("Ingrese el tipo de corticoides que contiene el medicamento");
+                String respuesta_antigripal= scantigripal2.nextLine();
+        {
+            try {
+                Exepcion_grupal.tipo_corticoides(respuesta_antigripal);
+            } catch (Exepcion_grupal ex) {
+                System.out.println(ex);
+                break;
+            }
+        }
 
                 
                 
